@@ -198,8 +198,11 @@ history = model.fit(
 After the predictions are done and result properly saved it could be submitted on Kaggle.
 
 While testing different hyperparameters and model architectures I raised my score from 0.53 up to 0.45.
-![Submissions progress](img/submissions_kaggle.jpg).
+![Submissions progress](img/submissions_kaggle.jpg)
 
-Progress is made, but I am still not happy with my score. Time to try another ML model.
+Progress was made, but I still was not happy with my score. It was time to try full datasets (with all turbines) to see how would it affect the result. Model would be used in its best performing settings, which gave a score of 0.45 for a decimated dataset.
+
+Interesting is that the result was the worst of all (0.54), which proves my assomption about dropping one of the turbines to be the right one.
+![Submissions progress](img/submissions_kaggle_2.jpg)
 
 **Update follows...**
