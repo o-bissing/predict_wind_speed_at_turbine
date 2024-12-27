@@ -197,7 +197,8 @@ history = model.fit(
 
 After the predictions are done and result properly saved it could be submitted on Kaggle.
 
-While testing different hyperparameters and model architectures I raised my score from 0.53 up to 0.45. ![Submissions progress](submissions/submissions_kaggle.jpg).
+While testing different hyperparameters and model architectures I raised my score from 0.53 up to 0.45.
+![Submissions progress](img/submissions_kaggle.jpg).
 
 Progress is made, but I am still not happy with my score. Time to try another ML model.
 
