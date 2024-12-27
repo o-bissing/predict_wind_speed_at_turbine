@@ -1,5 +1,6 @@
 .idea/
 submissions/
+datasets/
 metaData.csv
 sample_submission.csv
 test.csv
