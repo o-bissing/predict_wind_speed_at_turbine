@@ -199,11 +199,57 @@ history = model.fit(
 After the predictions are done and result properly saved it could be submitted on Kaggle.
 
 While testing different hyperparameters and model architectures I raised my score from 0.53 up to 0.45.
+
 ![Submissions progress](img/submissions_kaggle.jpg)
 
 Progress was made, but I still was not happy with my score. It was time to try full datasets (with all turbines) to see how would it affect the result. Model would be used in its best performing settings, which gave a score of 0.45 for a decimated dataset.
 
 Interesting is that the result was the worst of all (0.54), which proves my assomption about dropping one of the turbines to be the right one.
+
 ![Submissions progress](img/submissions_kaggle_2.jpg)
+
+# Training LightGBM model
+
+Before starting with XGBoost which was planned from the very beginning it would be good to try one more model.
+Data preparation is the same so that step could be skipped here.
+The only difference here is that to evaluate the model performance before comminment I decided to try to split the given train dataset into train and test (80%/20%) and to first evaluate like this (and update hyperparameters if needed).
+
+![Submissions progress](img/submissions_kaggle_3.jpg)
+
+Results are much better than FCCN. Time to try XGBoost.
+
+# Training XGBoost model
+
+XGBoost model with default parameters performed slightly better than LightGBM.
+
+![Submissions progress](img/submissions_kaggle_4.jpg)
+
+Time to test different hyperparameters in the same way as with LightGBM model. With the help of ChatGPT all test results were put into following table:
+
+| Model | Max Depth | Learning Rate | N Estimators | Alpha | Gamma | Subsample | Colsample Bytree | RMSE   | Notes                                            |
+| ----- | --------- | ------------- | ------------ | ----- | ----- | --------- | ---------------- | ------ | ------------------------------------------------ |
+| 1     | 6         | 0.05          | 1000         | -     | -     | -         | -                | 0.4186 | Baseline                                         |
+| 2     | 10        | 0.01          | 2000         | -     | -     | -         | -                | 0.4117 | Deeper trees, slower learning rate improved RMSE |
+| 3     | 6         | 0.01          | 1000         | -     | -     | -         | -                | 0.4420 | Slower learning rate hurt performance            |
+| 4     | 6         | 0.01          | 2000         | -     | -     | -         | -                | 0.4291 | More trees slightly helped                       |
+| 5     | 10        | 0.001         | 2000         | -     | -     | -         | -                | 0.6034 | Learning rate too low                            |
+| 6     | 10        | 0.1           | 2000         | -     | -     | -         | -                | 0.4140 | Faster learning rate worked well                 |
+| 7     | 7         | 0.03          | 1500         | -     | -     | -         | -                | 0.4139 | Balanced depth, rate, and estimators             |
+| 8     | 10        | 0.01          | 2000         | -     | 0.1   | -         | -                | 0.4148 | Added gamma                                      |
+| 9     | 10        | 0.01          | 2000         | 0.5   | -     | -         | -                | 0.4116 | Added alpha                                      |
+| 10    | 10        | 0.01          | 2000         | -     | -     | 0.8       | -                | 0.4075 | Added subsample                                  |
+| 11    | 10        | 0.01          | 2000         | -     | -     | -         | 0.8              | 0.4081 | Added colsample_bytree                           |
+| 12    | 10        | 0.01          | 2000         | -     | -     | -         | -                | -      | Too slow (dart booster)                          |
+| 13    | 10        | 0.01          | 2000         | 0.5   | -     | 0.8       | 0.8              | 0.4068 | Alpha + subsample improved RMSE                  |
+| 14    | 10        | 0.01          | 2000         | 0.1   | 0.1   | 0.8       | 0.8              | 0.4060 | Comprehensive tuning                             |
+| 15    | 10        | 0.01          | 3000         | 0.1   | 0.005 | 0.7       | 0.5              | 0.4012 | More trees, small gamma improved RMSE            |
+| 16    | 10        | 0.01          | 5000         | 0.1   | 0.005 | 0.7       | 0.5              | 0.3989 | Further improvement with more trees              |
+| 17    | 10        | 0.001         | 5000         | 0.1   | 0.005 | 0.7       | 0.5              | 0.4224 | Learning rate too low negated gains              |
+
+Three best performing model were chosen for testing on Kaggle. Here the results:
+
+![Submissions progress](img/submissions_kaggle_5.jpg)
+
+My best result is only 0.02 points behind the best overall (3 days to go), which I consider as a satisfying one. After finishing of the challenge results and positioning would look a bit different anyway.
 
 **Update follows...**
