@@ -27,6 +27,8 @@ To create a model that predicts wind speed on a turbine I worked with following 
 - **sklearn** library for metrics and splitting data
 - **Tensorflow** library for machine learning
 - **FCNN** model for predictions
+- **LightGBM** model for predictions
+- **XGBoost** model for predictions
 
 # Data preparation
 
@@ -70,7 +72,7 @@ target_feature                                 0.000000
 dtype: float64
 ```
 
-Numbers are percentage of missing values in the column. There are a lot of missing for the 3rd turbine (".1" values), so one of the solutions could be to drop these tables (filling them with values would be quite a time-consuming challenge).
+Numbers are percentage of missing values in the column. There are a lot of missing for the 3rd turbine (".1" values), so one of the solutions could be to drop these columns (filling them with values could be misleading for the model).
 
 There is a .csv file "metaData" with consist of informaion about the turbines (position, hight, etc.) that could help to understand how important 3rd turbine is for predictions on the 1st turbine. Calculated table of the differences to the 1st turbine:
 
@@ -246,10 +248,10 @@ Time to test different hyperparameters in the same way as with LightGBM model. W
 | 16    | 10        | 0.01          | 5000         | 0.1   | 0.005 | 0.7       | 0.5              | 0.3989 | Further improvement with more trees              |
 | 17    | 10        | 0.001         | 5000         | 0.1   | 0.005 | 0.7       | 0.5              | 0.4224 | Learning rate too low negated gains              |
 
-Three best performing model were chosen for testing on Kaggle. Here the results:
+Three best performing models were chosen for the testing on Kaggle. Here are the results:
 
 ![Submissions progress](img/submissions_kaggle_5.jpg)
 
-My best result is only 0.02 points behind the best overall (3 days to go), which I consider as a satisfying one. After finishing of the challenge results and positioning would look a bit different anyway.
+My best result is only 0.02 points behind the best overall (3 days to go) and it is 0.22 points better than my first result, which I consider as a satisfying one. After finish of the challenge results and positioning would look a bit different anyway.
 
 **Update follows...**
