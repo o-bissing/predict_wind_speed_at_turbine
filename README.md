@@ -1,5 +1,3 @@
-**Project for an ongoing Kaggle challenge, is steadily updated...**
-
 ## Introduction
 
 Goal of this project is to enchance my Data Science skills in forecasting. Doing this project I participate in a [Kaggle](https://kaggle.com/competitions/predict-the-wind-speed-at-a-wind-turbine) challenge.
@@ -254,4 +252,4 @@ Three best performing models were chosen for the testing on Kaggle. Here are the
 
 My best result is only 0.02 points behind the best overall (3 days to go) and it is 0.22 points better than my first result, which I consider as a satisfying one. After finish of the challenge results and positioning would look a bit different anyway.
 
-**Update follows...**
+**Update:** results are in, in the final Leaderbord I climbed one position higher and finished 13th. Doesn't sound amazing, but again: gap to the 1st place is only 0.02 points and to the last one more than 0.16.
