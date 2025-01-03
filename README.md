@@ -1,6 +1,6 @@
 ## Introduction
 
-Goal of this project is to enchance my Data Science skills in forecasting. Doing this project I participate in a [Kaggle](https://kaggle.com/competitions/predict-the-wind-speed-at-a-wind-turbine) challenge.
+Goal of this project is to enhance my Data Science skills in forecasting. Doing this project I participate in a [Kaggle](https://kaggle.com/competitions/predict-the-wind-speed-at-a-wind-turbine) challenge.
 
 ## Background
 
@@ -27,6 +27,8 @@ To create a model that predicts wind speed on a turbine I worked with following 
 - **FCNN** model for predictions
 - **LightGBM** model for predictions
 - **XGBoost** model for predictions
+- **Bash** for interaction with OS, doing terminal based tasks and working with GitHub
+- **Git** for version control
 
 ## Data preparation
 
