@@ -21,7 +21,6 @@ Below is an example of the data in this table.
 To create a model that predicts wind speed on a turbine I worked with following tools:
 
 - **Pandas** library for working with dataframes
-- **matplotlib.pyplot** and **seaborn** libraries for plotting the data
 - **sklearn** library for metrics and splitting data
 - **Tensorflow** library for machine learning
 - **FCNN** model for predictions
