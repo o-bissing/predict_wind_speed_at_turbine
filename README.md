@@ -16,7 +16,7 @@ Below is an example of the data in this table.
 | 1          | 2017-10-01 00:10:00 | 8.319863319396973 | 9.350296020507812  | 8.762059211730957  | 8.652318000793457  | 7.421575546264648  | 1.2076553106307983                   | 0.9166100025177002                     | 0.956899106502533                      | ... | 1770.806884765625     | 1737.21826171875      | 1572.7694091796875    | 0.0519975572824478                 | 0.0869988277554512                   | 0.0959980711340904                   | 0.0604995340108871                   | 0.0                                  | True     | 8.125226       |
 | 2          | 2017-10-01 00:20:00 | 8.799176216125488 | 8.510401725769043  | 9.533565521240234  | 8.166585922241211  | 7.79703950881958   | 1.124028563499451                    | 0.992840588092804                      | 1.3431802988052368                     | ... | 1766.0023193359375    | 1698.69921875         | 1655.04931640625      | 0.1689876168966293                 | 0.0569967851042747                   | 0.0879981145262718                   | 0.0089999875053763                   | 0.0159999281167984                   | True     | 7.551986       |
 
-## Tools I used (would be updated)
+## Tools I used
 
 To create a model that predicts wind speed on a turbine I worked with following tools:
 
@@ -26,6 +26,7 @@ To create a model that predicts wind speed on a turbine I worked with following 
 - **FCNN** model for predictions
 - **LightGBM** model for predictions
 - **XGBoost** model for predictions
+- **ETL** for extracting the data from .csv and transforming it (removing duplicates, handling missing values, etc.)
 - **Bash** for interaction with OS, doing terminal based tasks and working with GitHub
 - **Git** for version control
 
