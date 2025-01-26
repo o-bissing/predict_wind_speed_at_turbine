@@ -20,7 +20,7 @@ Below is an example of the data in this table.
 
 To create a model that predicts wind speed on a turbine I worked with following tools:
 
-- **Python** as main programming language
+- **Python** as a main programming language
 - **Pandas** library for working with dataframes
 - **sklearn** library for metrics and splitting data
 - **Tensorflow** library for machine learning
